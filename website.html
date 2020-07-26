@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TECHNOSOFT</title>
+	<link rel="stylesheet" type="text/css" href="stylingwebsite.css">
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+	
+</head>
+<body>
+	<div class="header">
+		<nav>
+			<div class="logo">
+				<h2>TECHNOSOFT</h2>
+			</div>
+			<div class="menu">
+				<ul>
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">SERVICES</a></li>
+					<li><a href="#">ABOUT US</a></li>
+					<li><a href="#">CONTACT US</a></li>
+				</ul>
+			</div>
+			<div class="loginbtn">
+				<ul>
+					<li><a href="#"><h3>LOGIN</h3></a></li>
+					<li><a href="#"><h3>SIGN UP</h3></a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<div class="main">
+		<div class="rightside">
+			<div class="welcome">
+				<h1><img src="HI.gif">hello</h1>
+				<h2>we are technosoft</h2>	
+				<h3>web developers</h3>
+			</div>
+		</div>
+
+		<div class="leftside">
+			<div class="image">
+				<img src="OFFICE.jpg">
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<br>
+
+	<div id="paragraph">
+		<h1><center>WHO WE ARE!!</center></h1>
+	</div>
+	<br>
+
+	<div class="paragraph" id="para">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			<br>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+	</div>
+	<div class="fadedScroller_fade"></div>
+
+	<br>
+	<br>
+	<br>
+
+	<section>
+		<h1 style="font-size: 60px;">CHIEF EXECUTIVES</h1>
+		<div class="placeholderimage">
+			<div class="static">
+				<div id="card1" class="card">
+			  		<img src="businessman.jpg">
+			  			<div class="card-body">
+			  				<br>
+			  				<h4 class="card-title">KUNAL SHARMA</h4>
+			  				<br>
+			   				<p class="card-text">CEO</p>
+			   				<br>
+			   				<br>
+			   				<a href="#" class="btn">See Profile</a>
+		  				</div>
+				</div>	
+			</div>
+			<div class="static_again">
+				<div id="card2" class="card">
+			  		<img src="businesswoman.jpg">
+			  			<div class="card-body">
+			  				<br>
+			  				<h4 class="card-title">SUNAINA SINGH</h4>
+			  				<br>
+			   				<p class="card-text">Full Stack Developer</p>
+			   				<br>
+			   				<br>
+			   				<a href="#" class="btn">See Profile</a>
+		  				</div>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+
+	<br>
+	<section>
+		<div class="footer">
+			<div class="footer_content">
+				<p>
+					COPYRIGHT@2020 New Delhi, India, Inc. all rights reserved. terms of use | privary policy-revised
+				</p>
+			</div>
+		</div>
+	</section>
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="java.js"></script>
+
+
+	<script>
+		jQuery(window).on("load",function() {
+		  jQuery(window).scroll(function() {
+		    var windowBottom = jQuery(this).scrollTop() + jQuery(this).innerHeight();
+		    jQuery("#paragraph").each(function() 
+		    {
+		      var objectBottom = jQuery(this).offset().top + jQuery(this).outerHeight();
+		      if (objectBottom < windowBottom) 
+		      	{ 
+		        	if (jQuery(this).css("opacity")==0) {jQuery(this).fadeTo(500,1);}
+		      	} 
+
+		      else 
+		      	{
+		       		if (jQuery(this).css("opacity")==1) {jQuery(this).fadeTo(500,0);}
+		      	}
+		    });
+		  }).scroll(); 
+		});
+
+		jQuery(window).on("load",function() {
+		  jQuery(window).scroll(function() {
+		    var windowBottom = jQuery(this).scrollTop() + jQuery(this).innerHeight();
+		    jQuery("#para").each(function() 
+		    {
+			    var objectBottom = jQuery(this).offset().top + jQuery(this).outerHeight();
+		        if (objectBottom < windowBottom) 
+			      	{ 
+			   	    	if (jQuery(this).css("opacity")==0) {jQuery(this).fadeTo(300,1);}
+			      	} 
+			    if (objectBottom > windowBottom) 
+			    	{
+			        	if (jQuery(this).css("opacity")==1) {jQuery(this).fadeTo(300,0);}
+			      	}
+		    });
+		  }).scroll(); 
+		});
+
+
+		jQuery(window).on('load resize scroll', function() {
+		  jQuery('.static').each(function() {
+		    var windowTop = jQuery(window).scrollTop();
+		    var elementTop = jQuery(this).offset().top;
+		    var leftPosition = windowTop - elementTop;
+		      jQuery(this)
+		        .find('#card1')
+		        .css({ left: leftPosition });
+		  });
+		});
+
+		jQuery(window).on('load resize scroll', function() {
+		  jQuery('.static_again').each(function() {
+		    var windowTop2 = jQuery(window).scrollTop();
+		    var elementTop2 = jQuery(this).offset().top;
+		    var rightPosition = windowTop2 - elementTop2;
+		      jQuery(this)
+		        .find('#card2')
+		        .css({ right: rightPosition });
+		  });
+		});
+
+	</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
